@@ -1,11 +1,11 @@
+import os
 from fastapi import FastAPI
 from pydantic import BaseModel
 from pymongo import MongoClient
 from bson import ObjectId
 
 # --- MongoDB Connection ---
-MONGO_URI = "mongodb+srv://SouvikBuilds:1s2d3f4h5G%40@cluster0.r5l5h1i.mongodb.net/?retryWrites=true&w=majority"
-
+MONGO_URI = os.getenv("MONGO_URI")  # env se le raha hai
 client = MongoClient(MONGO_URI)
 db = client["car_database"]
 cars_collection = db["cars"]
