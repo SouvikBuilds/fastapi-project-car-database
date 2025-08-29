@@ -38,7 +38,8 @@ def hello():
 def add_car(car: Car):
     car_dict = car.dict()
     result = cars_collection.insert_one(car_dict)
-    return {"message": f"{car.model} added successfully", "id": str(result.inserted_id)}
+    new_car = cars_collection.find_one({"_id": result.inserted_id})
+    return car_serializer(new_car) 
 
 @app.get("/cars")
 def get_cars():
