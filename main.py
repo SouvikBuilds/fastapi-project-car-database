@@ -11,7 +11,8 @@ app = FastAPI()
 # --- CORS setup ---
 origins = [
     "http://localhost:5173",  # React dev server
-    "https://fastapi-project-car-database.onrender.com"  # future frontend
+    "https://fastapi-project-car-database.onrender.com",  # future frontend
+    "https://car-crud-git-main-souvik-chatterjees-projects-308ce5f4.vercel.app"
 ]
 
 app.add_middleware(
